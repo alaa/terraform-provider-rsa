@@ -2,14 +2,16 @@
 
 The main purpose of this provider is to be able to calculate the Public Key from a provided PEM encoded Private Key.
 
-### Build:
+### Build on Linux:
 
 ```
-make clean
-make deps
-make compile
-make test
-make clean
+GOOS=linux GOARCH=amd64 make clean deps build test
+```
+
+### Build on Mac:
+
+```
+GOOS=darwin GOARCH=amd64 make clean deps build test
 ```
 
 This RSA provider has only one resource `rsa_public_key` which accepts one argument which is the `private_key`.
